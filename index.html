@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Local Storage</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Mi página</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul
+              class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+              style="--bs-scroll-height: 100px"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tienda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Buscar
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="container my-3">
+        <h1 class="title mb-4">Formulario de Registro</h1>
+        <form action="" id="formulario" name="formulario" class="form">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              id="nombres"
+              name="nombres"
+              class="form-control"
+              placeholder="Tus nombres"
+            />
+            <label for="nombres" class="form-label">Nombres</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              id="apellidos"
+              name="apellidos"
+              class="form-control"
+              placeholder="Tus apellidos"
+            />
+            <label for="apellidos" class="form-label">Apellidos</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              id="direccion"
+              name="direccion"
+              class="form-control"
+              placeholder="Tu direccion"
+            />
+            <label for="direccion" class="form-label">Direccion</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              class="form-control"
+              placeholder="Tu telefono"
+            />
+            <label for="telefono" class="form-label">Telefono</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              class="form-control"
+              placeholder="Tu correo"
+            />
+            <label for="correo" class="form-label">Correo</label>
+          </div>
+          <button
+            type="submit"
+            id="btn-enviar-contacto"
+            class="btn btn-primary"
+          >
+            Enviar
+          </button>
+        </form>
+      </section>
+
+      <section class="container my-5" id="datos">
+        <h2 class="title">Datos registrados anteriormente</h2>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

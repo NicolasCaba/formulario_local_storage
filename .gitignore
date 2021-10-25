@@ -1,3 +1,9 @@
+# Archivo configuracion prettier
+.prettierrc.json
+
+# Archivo configuracion eslint
+.eslintrc.json
+
 # Logs
 logs
 *.log
