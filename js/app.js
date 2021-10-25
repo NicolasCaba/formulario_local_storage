@@ -13,8 +13,12 @@ function guardarDatos(datos) {
     correo: inputCorreo.value,
   };
 
+  if (datos === null) {
+    const creacionDatos = [];
+    creacionDatos.push(datosDeContacto);
+    return creacionDatos;
+  }
   datos.push(datosDeContacto);
-
   return datos;
 }
 
@@ -24,9 +28,12 @@ function mostrarDatos(datos) {
   datos.forEach((dato) => {
     const cardDiv = document.createElement('DIV');
     cardDiv.classList.add('card');
+    cardDiv.classList.add('my-3');
 
     const cardHeader = document.createElement('H5');
     cardHeader.classList.add('card-header');
+    cardHeader.classList.add('bg-dark');
+    cardHeader.classList.add('text-light');
     cardHeader.textContent = `${dato.nombres} ${dato.apellidos}`;
 
     const cardDivBody = document.createElement('DIV');
@@ -36,19 +43,13 @@ function mostrarDatos(datos) {
     cardDivText.classList.add('card-text');
 
     const pDireccion = document.createElement('P');
-    const spanDireccion = document.createElement('SPAN');
-    spanDireccion.textContent = 'Direccion:';
-    pDireccion.textContent = `${spanDireccion} ${dato.direccion}`;
+    pDireccion.innerHTML = `<span class="fw-bold">Direccion:</span> ${dato.direccion}`;
 
     const pTelefono = document.createElement('P');
-    const spanTelefono = document.createElement('SPAN');
-    spanTelefono.textContent = 'Telefono:';
-    pTelefono.textContent = `${spanTelefono} ${dato.telefono}`;
+    pTelefono.innerHTML = `<span class="fw-bold">Teléfono:</span> ${dato.telefono}`;
 
     const pCorreo = document.createElement('P');
-    const spanCorreo = document.createElement('SPAN');
-    spanCorreo.textContent = 'Correo:';
-    pCorreo.textContent = `${spanCorreo} ${dato.correo}`;
+    pCorreo.innerHTML = `<span class="fw-bold">Correo:</span> ${dato.correo}`;
 
     cardDivText.appendChild(pDireccion);
     cardDivText.appendChild(pTelefono);
@@ -83,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   botonEnviarContacto.addEventListener('click', () => {
     const datos = leerStorage();
     const datosNuevos = guardarDatos(datos);
+    mostrarDatos(datosNuevos);
     guardarStorage(datosNuevos);
   });
 });
